@@ -9,18 +9,17 @@ router.post('/', async(req, res) => {
     var id = uuid.v1();
     let newUser = {"_id":id,"nome":nome,"email":email,"genero":genero};
     try{
-        fs.readFile('./src/dados/dados.json',(err,data) =>{
+        fs.readFile('./src/dados/cadastrados.json',(err,data) =>{
             if (err) throw err;
             let usuariosCadastrados = JSON.parse(data);
             // console.log(Object.keys(usuariosCadastrados))
             for (var i in usuariosCadastrados){
                 if (usuariosCadastrados[i].email == email) {
-                    console.log('entrou')
                     return res.send('Usuário já cadastrado! Tente um outro email')
                 }
             }
             usuariosCadastrados.push(newUser)
-            fs.writeFile('./src/dados/dados.json',JSON.stringify(usuariosCadastrados,null,1),err =>{
+            fs.writeFile('./src/dados/cadastrados.json',JSON.stringify(usuariosCadastrados,null,1),err =>{
                 if (err) throw err;
                 return res.send(newUser)
             })
