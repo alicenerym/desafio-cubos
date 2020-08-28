@@ -13,7 +13,7 @@ Caso ocorra algum erro na instalação, delete a pasta "node_module" e repita o 
 
 ``` npm start ```
 
-Feito isso, o servidor está pronto para aceitar as requisições, sendo elas:
+Feito isso, o servidor está pronto para aceitar as requisições, todas usando o método *POST* sendo elas:
 - *addUser*
 - *addToLine*
 - *findPosition*
