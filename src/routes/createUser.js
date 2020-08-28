@@ -12,7 +12,6 @@ router.post('/', async(req, res) => {
         fs.readFile('./src/dados/cadastrados.json',(err,data) =>{
             if (err) throw err;
             let usuariosCadastrados = JSON.parse(data);
-            // console.log(Object.keys(usuariosCadastrados))
             for (var i in usuariosCadastrados){
                 if (usuariosCadastrados[i].email == email) {
                     return res.send('Usuário já cadastrado! Tente um outro email')
