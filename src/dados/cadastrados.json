@@ -2,13 +2,7 @@
  {
   "_id": "1867dc70-e87c-11ea-84e2-cbc608124ee7",
   "nome": "sergio",
-  "email": "joe@example.com",
-  "genero": "Masculino"
- },
- {
-  "_id": "0e58ad30-e87d-11ea-9372-03383e710583",
-  "nome": "sergio",
-  "email": "lucio@example.com",
+  "email": "sergio@example.com",
   "genero": "Masculino"
  },
  {
@@ -40,5 +34,17 @@
   "nome": "maria",
   "email": "maria@example.com",
   "genero": "Feminino"
+ },
+ {
+  "_id": "94a1b850-e8e6-11ea-8d0a-4f97de6f76dd",
+  "nome": "Flavio",
+  "email": "flavio@example.com",
+  "genero": "Masculino"
+ },
+ {
+  "_id": "aeb76c80-e8e6-11ea-a039-3d4e370e811b",
+  "nome": "Fernando",
+  "email": "fernando@example.com",
+  "genero": "Masculino"
  }
 ]
