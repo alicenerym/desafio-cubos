@@ -12,6 +12,7 @@ const app = express();
 require('./src/routes/createUser')(app);
 require('./src/routes/addToLine')(app);
 require('./src/routes/findPosition')(app);
+require('./src/routes/showLine')(app);
 app.listen(3000, ()=>{
     console.log("Sever is working in PORT 3000");
 });
