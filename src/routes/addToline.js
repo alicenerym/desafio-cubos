@@ -7,7 +7,6 @@ const cadastrados = require('../dados/cadastrados.json');
 router.post('/', async(req, res) => {
     // Esse metódo deve receber o id do usuário a ser adicionado à fila e deve retornar a posição em que ele está na fila.
     const {id} = req.body;
-    let usuariosNaFila;
     try{
         for (var i = 0;i<cadastrados.length;i++){
             if (cadastrados[i]._id == id) {
@@ -18,13 +17,13 @@ router.post('/', async(req, res) => {
         if (!usuarioEncontrado){
             return res.status(400).send('Usuário não encontrado! Confira o id informado')
         }else{
-            if (nafila.length==0){
+            const posicaoNaFila = nafila.length;
+            if (posicaoNaFila==0){
                 fs.writeFile('./src/dados/nafila.json',JSON.stringify([usuarioEncontrado],null,2),err =>{
                     if (err) throw err;
                     return res.send(1);
                 });
             }else{
-                const posicaoNaFila = nafila.length;
                 for (var j = 0;j<posicaoNaFila;j++){
                     if (nafila[j] == id){
                         return res.status(400).send('Usuário já está na fila! Informe outro id');

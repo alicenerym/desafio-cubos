@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const nafila = require('../dados/nafila.json');
 const cadastrados = require('../dados/cadastrados.json')
-const fs = require('fs');
 
 router.post('/', async(req, res) => {
     // Esse metódo deve receber um gênero de usuário e retornar uma lista de usuários com aquele gênero (nome, gênero e email), bem como a posição de cada um deles na fila (ordenando de primeira posição para última).
