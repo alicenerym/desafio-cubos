@@ -10,7 +10,7 @@ router.post('/', async(req, res) => {
        for (var i =0;i<nafila.length;i++ ){
            for (var j = 0; j<cadastrados.length;j++){
                 if (nafila[i] == cadastrados[j]._id){
-                    listaCompleta.push({"posicaoNaFila":i+1,"nome":cadastrados[j].nome,"genero":cadastrados[j].genero,"email":cadastrados[j].email})
+                    listaCompleta.push({"posicaoNaFila":i+1,"nome":cadastrados[j].nome,"genero":cadastrados[j].genero.toUpperCase(),"email":cadastrados[j].email.toLowerCase()})
                     break;
                 }
            }

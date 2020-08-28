@@ -10,14 +10,19 @@ router.post('/', async(req, res) => {
     try{
         for (var j = 0;j<nafila.length;j++){
             for (var i =0;i<cadastrados.length;i++){
-                if (cadastrados[i].genero == genero && nafila[j] ==cadastrados[i]._id){
+                if (cadastrados[i].genero.toUpperCase() == genero.toUpperCase() && nafila[j] ==cadastrados[i]._id){
                     const cadAtual = cadastrados[i];
-                    listaGenero.push({"nome":cadAtual.nome,"genero":cadAtual.genero,"email":cadAtual.email,"posicaoNaFila":j+1})
+                    listaGenero.push({"nome":cadAtual.nome,"genero":cadAtual.genero.toUpperCase(),"email":cadAtual.email.toLowerCase(),"posicaoNaFila":j+1})
                     break;
                 }
             }
         }
-        res.send(listaGenero);
+        if (listaGenero.length ==0){
+            return res.status(400).send('Não foram encontrados usuários com esse gênero')
+        }else{
+            return res.send(listaGenero);
+        }
+        
     }catch(err){
         return res.status(400).send({error: err});
     }

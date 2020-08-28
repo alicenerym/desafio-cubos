@@ -11,7 +11,7 @@ router.post('/', async(req, res) => {
     try{
         for (var i = 0; i<cadastrados.length;i++){
             for (var j = 0; j<nafila.length;j++){
-                if (nafila[j] == cadastrados[i]._id && cadastrados[i].email ==email){
+                if (nafila[j] == cadastrados[i]._id && cadastrados[i].email.toLowerCase() ==email.toLowerCase()){
                     idCadastrado = cadastrados[i]._id;
                     posicaoFila = i+1;
                     break;

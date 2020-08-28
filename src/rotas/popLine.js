@@ -8,6 +8,9 @@ router.post('/', async(req, res) => {
     var primeiroFila;
     var copiaFila = nafila;
     try{
+        if (nafila.length==0){
+            return res.status(400).send('Não existem usuários na fila. Adicione novos antes!')
+        }
         primeiroFila = nafila[0];
         copiaFila.splice(0,1)
         fs.writeFile('./src/dados/nafila.json',JSON.stringify(copiaFila,null,1),err =>{

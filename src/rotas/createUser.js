@@ -8,10 +8,10 @@ router.post('/', async(req, res) => {
     //https://stackabuse.com/reading-and-writing-json-files-with-node-js/
     const {nome,email,genero} = req.body;
     var id = uuid.v1();
-    let newUser = {"_id":id,"nome":nome,"email":email,"genero":genero};
+    let newUser = {"_id":id,"nome":nome,"email":email.toLowerCase(),"genero":genero.toUpperCase()};
     try{        
         for (var i = 0; i< cadastrados.length;i++){
-            if (cadastrados[i].email == email) {
+            if (cadastrados[i].email.toLowerCase() == email.toLowerCase()) {
                 return res.status(400).send('Usuário já cadastrado! Tente um outro email')
             }
         }

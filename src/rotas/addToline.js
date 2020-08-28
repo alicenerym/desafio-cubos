@@ -21,7 +21,7 @@ router.post('/', async(req, res) => {
             if (posicaoNaFila==0){
                 fs.writeFile('./src/dados/nafila.json',JSON.stringify([usuarioEncontrado],null,2),err =>{
                     if (err) throw err;
-                    return res.send(1);
+                    return res.send({"posicaoNaFila":1});
                 });
             }else{
                 for (var j = 0;j<posicaoNaFila;j++){
