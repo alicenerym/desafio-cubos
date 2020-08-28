@@ -117,3 +117,7 @@ Essa rota é utilizada para filtrar os usuários na fila a partir do seu gênero
 As possíveis respostas nessa rota são:
 - *'Não foram encontrados usuários com esse gênero'* caso não tenha nenhum usuário na fila no gênero informado;
 - *listaGeneroSelecionado* com os usuários e suas posições na fila filtrados pelo gênero.
+
+## Limitações
+- O email deve ser sempre informado com todos os dígitos em minusculo;
+- O gênero deve sempre ter a inicial maiúscula e o restante minúsculo.
